@@ -49,8 +49,10 @@ class Date extends DBField {
 			try{
 				$date = new DateTime($value);
 				$this->value = $date->Format('Y-m-d');
+				return;
 			}catch(Exception $e){
-				$this->value = '1970-01-01';
+				$this->value = null;
+				return;
 			}
 		}
 	}
